@@ -1,0 +1,11 @@
+#-----------------------------------------------
+#  This playbook is used to 
+#  Install package on linux operation system
+#-----------------------------------------------
+- name: Package installation deployment
+  hosts: dev
+  tasks:
+    - name: Install package ==> "{{PackageName}} "
+      ansible.builtin.package
+        name: "{{ PackageName }}" # Variable will be set on AAP inventory 
+        state: latest
